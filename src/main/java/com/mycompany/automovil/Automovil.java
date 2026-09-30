@@ -4,6 +4,24 @@ package com.mycompany.automovil;
 public class Automovil {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+         Auto auto = new Auto("Nizan", 2026, 2.0, FuelType.GASOLINE, CarType.SUBCOMPACT, 4, 4, 220, Color.RED);
+
+        auto.show();
+        System.out.println();
+
+        auto.setCurrentSpeed(100);
+        System.out.println("Velocidad actual: " + auto.getCurrentSpeed() + " km/h");
+
+        auto.accelerate(20);
+        System.out.println("Velocidad actual: " + auto.getCurrentSpeed() + " km/h");
+
+        auto.decelerate(50);
+        System.out.println("Velocidad actual: " + auto.getCurrentSpeed() + " km/h");
+
+        System.out.println("Tiempo estimado para 140 km: " + auto.calculateArrivalTime(140) + " h");
+
+        auto.brake();
+        System.out.println("Velocidad actual: " + auto.getCurrentSpeed() + " km/h");
+    
     }
 }

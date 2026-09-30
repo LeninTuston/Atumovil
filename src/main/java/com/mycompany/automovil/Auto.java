@@ -17,16 +17,102 @@ public class Auto {
     
     
 //atributos
-    public String brand;
-    public int model;
-    public double engine;
+    private String brand;
+    private int model;
+    private double engine;
     public FuelType fuelType;
     public CarType carType;
-    public int numberOfDoor;
-    public int numberOfSeat;
-    public int maximumSpeed;
+    private int numberOfDoor;
+    private int numberOfSeat;
+    private int maximumSpeed;
     public Color color;
-    public double currentSpeed = 0;
+    private double currentSpeed = 0;
+//getters y setters
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public int getModel() {
+        return model;
+    }
+
+    public void setModel(int model) {
+        this.model = model;
+    }
+
+    public double getEngine() {
+        return engine;
+    }
+
+    public void setEngine(double engine) {
+        this.engine = engine;
+    }
+
+    public int getNumberOfDoor() {
+        return numberOfDoor;
+    }
+
+    public void setNumberOfDoor(int numberOfDoor) {
+        this.numberOfDoor = numberOfDoor;
+    }
+
+    public int getNumberOfSeat() {
+        return numberOfSeat;
+    }
+
+    public void setNumberOfSeat(int numberOfSeat) {
+        this.numberOfSeat = numberOfSeat;
+    }
+
+    public int getMaximumSpeed() {
+        return maximumSpeed;
+    }
+
+    public void setMaximumSpeed(int maximumSpeed) {
+        this.maximumSpeed = maximumSpeed;
+    }
+
+    public double getCurrentSpeed() {
+        return currentSpeed;
+    }
+
+    public void setCurrentSpeed(double currentSpeed) {
+        this.currentSpeed = currentSpeed;
+    }
+
+ //metodos
+    
+        public void accelerate(double speed) {
+        if (currentSpeed + speed > maximumSpeed) {
+            System.out.println("No se puede acelerar: supera la velocidad maxima de " + maximumSpeed + " km/h");
+        } else {
+            currentSpeed += speed;
+        }
+    }
+
+    public void decelerate(double speed) {
+        if (currentSpeed - speed < 0) {
+            System.out.println("No se puede desacelerar: la velocidad no puede ser negativa");
+        } else {
+            currentSpeed -= speed;
+        }
+    }
+
+    public void brake() {
+        currentSpeed = 0;
+    }
+
+    public double calculateArrivalTime(double distance) {
+        if (currentSpeed == 0) {
+            System.out.println("El auto esta detenido, no se puede calcular el tiempo");
+            return 0;
+        }
+        return distance / currentSpeed;
+    }
     
     public void show (){
         System.out.println("brand "+brand);
