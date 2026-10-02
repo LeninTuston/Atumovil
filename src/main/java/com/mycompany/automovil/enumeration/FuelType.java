@@ -1,5 +1,5 @@
 
-package com.mycompany.automovil;
+package com.mycompany.automovil.enumeration;
 
 public enum FuelType {
     GASOLINE,

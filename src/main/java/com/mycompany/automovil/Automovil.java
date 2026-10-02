@@ -1,6 +1,11 @@
 
 package com.mycompany.automovil;
 
+import com.mycompany.automovil.object.Auto;
+import com.mycompany.automovil.enumeration.FuelType;
+import com.mycompany.automovil.enumeration.Color;
+import com.mycompany.automovil.enumeration.CarType;
+
 public class Automovil {
 
     public static void main(String[] args) {
@@ -18,9 +23,9 @@ public class Automovil {
         auto.decelerate(50);
         System.out.println("Velocidad actual: " + auto.getCurrentSpeed() + " km/h");
 
-        System.out.println("Tiempo estimado para 140 km: " + auto.calculateArrivalTime(140) + " h");
+        System.out.println("Tiempo estimado para 140 km: " + auto.arrivalTime(140) + " h");
 
-        auto.brake();
+        auto.calculateBrake();
         System.out.println("Velocidad actual: " + auto.getCurrentSpeed() + " km/h");
     
     }

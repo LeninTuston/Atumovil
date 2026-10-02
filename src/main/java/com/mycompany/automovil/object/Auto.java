@@ -1,4 +1,8 @@
-package com.mycompany.automovil;
+package com.mycompany.automovil.object;
+
+import com.mycompany.automovil.enumeration.CarType;
+import com.mycompany.automovil.enumeration.Color;
+import com.mycompany.automovil.enumeration.FuelType;
 
 public class Auto {
 
@@ -102,11 +106,11 @@ public class Auto {
         }
     }
 
-    public void brake() {
+    public void calculateBrake() {
         currentSpeed = 0;
     }
 
-    public double calculateArrivalTime(double distance) {
+    public double arrivalTime(double distance) {
         if (currentSpeed == 0) {
             System.out.println("El auto esta detenido, no se puede calcular el tiempo");
             return 0;
