@@ -3,7 +3,6 @@ package com.mycompany.automovil.object;
 import com.mycompany.automovil.enumeration.CarType;
 import com.mycompany.automovil.enumeration.Color;
 import com.mycompany.automovil.enumeration.FuelType;
-
 public class Auto {
 
     //contructor
@@ -24,12 +23,12 @@ public class Auto {
     private String brand;
     private int model;
     private double engine;
-    public FuelType fuelType;
-    public CarType carType;
+    private FuelType fuelType;
+    private CarType carType;
     private int numberOfDoor;
     private int numberOfSeat;
     private int maximumSpeed;
-    public Color color;
+    private Color color;
     private double currentSpeed = 0;
 //getters y setters
     public String getBrand() {
@@ -88,47 +87,33 @@ public class Auto {
         this.currentSpeed = currentSpeed;
     }
 
- //metodos
+
+
+    public FuelType getFuelType() {
+        return fuelType;
+    }
+
+    public void setFuelType(FuelType fuelType) {
+        this.fuelType = fuelType;
+    }
+
+    public CarType getCarType() {
+        return carType;
+    }
+
+    public void setCarType(CarType carType) {
+        this.carType = carType;
+    }
+
+    public Color getColor() {
+        return color;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
+    }
+
+  
     
-        public void accelerate(double speed) {
-        if (currentSpeed + speed > maximumSpeed) {
-            System.out.println("No se puede acelerar: supera la velocidad maxima de " + maximumSpeed + " km/h");
-        } else {
-            currentSpeed += speed;
-        }
-    }
-
-    public void decelerate(double speed) {
-        if (currentSpeed - speed < 0) {
-            System.out.println("No se puede desacelerar: la velocidad no puede ser negativa");
-        } else {
-            currentSpeed -= speed;
-        }
-    }
-
-    public void calculateBrake() {
-        currentSpeed = 0;
-    }
-
-    public double arrivalTime(double distance) {
-        if (currentSpeed == 0) {
-            System.out.println("El auto esta detenido, no se puede calcular el tiempo");
-            return 0;
-        }
-        return distance / currentSpeed;
-    }
-    
-    public void show (){
-        System.out.println("brand "+brand);
-        System.out.println("model "+model);
-        System.out.println("engine "+engine);
-        System.out.println("fuelType "+fuelType);
-        System.out.println("carType "+carType);
-        System.out.println("numberOfDoor "+numberOfDoor);
-        System.out.println("numberOfSeat "+numberOfSeat);
-        System.out.println("maximumSpeed "+maximumSpeed);
-        System.out.println("color "+color);
-        System.out.println("currentSpeed "+currentSpeed);
-    }
-
+        
 }

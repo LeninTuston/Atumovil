@@ -1,16 +1,20 @@
 
 package com.mycompany.automovil;
-
 import com.mycompany.automovil.object.Auto;
 import com.mycompany.automovil.enumeration.FuelType;
 import com.mycompany.automovil.enumeration.Color;
 import com.mycompany.automovil.enumeration.CarType;
+import com.mycompany.automovil.implentacion.Autos;
+import com.mycompany.automovil.interfaces.InterfazAuto;
 
 public class Automovil {
 
     public static void main(String[] args) {
-         Auto auto = new Auto("Nizan", 2026, 2.0, FuelType.GASOLINE, CarType.SUBCOMPACT, 4, 4, 220, Color.RED);
-
+         Auto auto = new Auto("Nizan", 2026, 2.0, FuelType.GASOLINE, CarType.SUBCOMPACT, 4, 4, 220, Color.RED);         
+         InterfazAuto autos= new Autos();
+         autos.show(auto);
+         
+/*
         auto.show();
         System.out.println();
 
@@ -27,6 +31,6 @@ public class Automovil {
 
         auto.calculateBrake();
         System.out.println("Velocidad actual: " + auto.getCurrentSpeed() + " km/h");
-    
+    */
     }
 }

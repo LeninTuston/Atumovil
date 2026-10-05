@@ -1,9 +1,10 @@
 
 package com.mycompany.automovil.implentacion;
-
+import com.mycompany.automovil.interfaces.InterfazAuto;
 import com.mycompany.automovil.object.Auto;
 
-public class Autos {
+ 
+public class Autos implements InterfazAuto {
  public void accelerate(double speed,Auto auto) {
         if (auto.getCurrentSpeed() + speed > auto.getMaximumSpeed()) {
             System.out.println("No se puede acelerar: supera la velocidad maxima de " + auto.getMaximumSpeed() + " km/h");
