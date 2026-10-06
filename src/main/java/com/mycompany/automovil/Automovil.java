@@ -13,7 +13,12 @@ public class Automovil {
          Auto auto = new Auto("Nizan", 2026, 2.0, FuelType.GASOLINE, CarType.SUBCOMPACT, 4, 4, 220, Color.RED);         
          InterfazAuto autos= new Autos();
          autos.show(auto);
-         
+         System.out.println();
+         auto.setCurrentSpeed(100);
+         System.out.println("velocidad actual: "+ auto.getCurrentSpeed()+" km/h");     
+         autos.accelerate(20,auto );
+         System.out.println("velocidad actual: "+auto.getCurrentSpeed()+" km/h");
+
 /*
         auto.show();
         System.out.println();
